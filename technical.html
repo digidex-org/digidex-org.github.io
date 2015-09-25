@@ -1,0 +1,161 @@
+<html>
+<head>
+	<title>Digidex.org</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+
+<body>
+	<header>
+		<h1>DIGIDEX</h1>
+		<h2>Decentralized Digital Business Cards</h2>
+	</header>
+
+	<nav></nav>
+
+	<div class="main-content">
+	<article>
+
+		<h1>About the Format</h1>
+
+		<p>The digidex format is based on three virtues: simplicity, decentralization, and graceful degredation.</p>
+
+		<p>Digidex is designed to be <strong>simple</strong>. In fact, Digidex is so dead-simple, that it perhaps doesn't even qualify as a "standard". At a minimum, a Digidex card consists of an arbitrary JSON object. That's all. Most Digidex cards will also include at least a graphical image to serve as the card itself, but that's not required.</p>
+
+		<p>Dgidex is <strong>decentralized</strong> in nature, much like the world wide web. Anyone can create a card and host it on their own website. There is no central authority that controls all digidex cards. There are no fees to pay, and no paperwork to fill out.</p>
+
+		<p>Not everyone has a smartphone (let alone a Digidex client) so digidex is designed to <strong>degrade gracefully</strong>. Digidex isn't meant to fully replace physical business cards. In fact, there are a lot of social norms and gestures involving physical business cards that would be difficult to recreate digitally. While this isn't a strict requirement of the format, clients and apps are strongly encouraged to follow Digidex's graceful degredation guidelines.</p>
+
+		<h1>About the Creator</h1>
+
+		<p>Digidex was created by Avery Pierce, a software developer working out of the American Midwest.</p>
+
+<!-- -->
+
+		<h1>Virtues</h1>
+		<p>Simplicity</p>
+		<p>Graceful Degredation</p>
+		<p>Decentralization</p>
+
+		<p>Digidex is built with three virtues: Simplicity, graceful degredation, and decentralization.</p>
+
+		<h2>Simplicity</h2>
+		<p>Digidex is designed to be simple. At a minimum, a Digidex card consists of an arbitrary JSON object. That's all. Most Digidex cards will also include at least a graphical image to serve as the card itself, but that's not required.</p>
+
+		<p>The JSON object that makes up the Digidex card only has to conform to two easy-to-follow rules:</p>
+		<ol>
+			<li>It must be valid JSON</li>
+			<li>The root node must be an object (i.e. not an array or primitive data type)</li>
+		</ol>
+
+		<p>Aside from the hard and fast rules above, there are several conventions that you should probably honor when creating your Digidex card or app:</p>
+		<ul>
+			<li>For the URL to the card graphic, use the key <code>_cardURL</code></li>
+			<li>Other keys that are not for card content (such as special keys that are interpreted by an app in special ways) should be prefixed with an underscore.</li>
+			<li>Keep your digidex cards simple. Avoid nested objects and arrays more than one level deep.</li>
+			<li>Avoid creating overly compartmentalized fields. Instead of creating a separate fields for street address, city, country, just provide a single field for the entire address.</li>
+		</ul>
+
+		<p>Unlike vcard, Digidex makes very few assumptions on the type of data you're providing. There aren't designated fields for first name and last name. In fact, defining names so rigidly is bad design anyway. Some people have only one name. Some people have multiple middle names. Digidex simplifies this problem by allowing you to name each field however you see fit. You could use "first name", "full name", "third name", "given name", "family name", "maiden name", or simply "name".</p>
+
+
+		<h2>Graceful Degredation</h2>
+
+		<p>Digidex is designed to degrade gracefully. While the term "graceful degredation" has historically referred to websites providing fallbacks for rich web content, Digidex intends to go even further. Think of your Digidex card as an extension of your physical business card. People who don't have smartphones should still be able to use your business card as-is – that's graceful degredation.</p>
+
+		<p>The QR code that you use for Digidex should point to a standard web page that displays all of the card's data. Somewhere on this webpage, you should include an "open in Digidex" link that uses the "digidex://" URL scheme. Additionally, embedded in the head of this web page should be a meta tag that includes the URL to the original JSON document. This way, when the QR code is scanned by a Digidex app, the app can download the original data immediately, instead of asking the user to click another link.</p>
+
+		<h1>Examples:</h1>
+
+		<p>Below is a simple example that you might use for yourself.</p>
+		<code><pre>
+{
+	"_cardURL":"http://bloviations.net/contact/bizcard0.png",
+	"name":"John Appleseed",
+	"company":"123 Businesses",
+	"occupation":"Software Engineer",
+	"phone":{
+		"office":"(555)555-5555",
+		"cell":"(555)555-5555"
+	},
+	"address":{
+		"home":"123 Example Avenue\nExample EX, 00000"
+	},
+	"website":"http://bloviations.net",
+	"twitter":"@example",
+	"facebook":"http://facebook.com/example"
+}
+		</pre></code>
+
+
+
+
+		<p>Digidex does not constrain you to specific keys. Anything goes!</p>
+		<code><pre>
+{
+	"name":"John Appleseed",
+	"blog":"http://myBlog.com",
+	"vlog":"http://youtube.com/myvlog",
+	"podcasts":{
+		"This American Life":"http://podcastURL.com",
+		"Serial":"http://serialpodcast.com"
+	},
+	"astrological sign":"Ares",
+	"favorite sandwich":"BLT"
+}
+		</pre></code>
+
+		<p>You can use it for your business or other organization</p>
+		<code><pre>
+{
+	"name":"The Business Factory",
+	"hours":{
+		"Monday-Friday":"9am-5pm",
+		"Saturday":"11am-4pm",
+		"Sunday":"Closed"
+	},
+	"customer service":"1 (800) 555-4567",
+	"address":"123 Example Avenue\nExample EX, 00000"
+	"parking directions":"Please park around back."
+}
+		</pre></code>
+
+		<p>... or whatever else you want.</p>
+		<code><pre>
+{
+	"name":"Corny Cornbread Corn Casserole",
+	"ingredients":{
+		"corn":"1 can",
+		"cream style corn":"1 can",
+		"Jiffy Corn Bread mix":"1 box",
+		"sour cream":"1 cup",
+		"chopped onions":"1 cup",
+		"eggs":"2"
+	},
+	"directions":{
+		"1":"Preheat oven to 300 degrees farenheit",
+		"2":"Mix all ingredients into a bowl",
+		"3":"Pour mixture into a greased 2 qt caserole dish",
+		"4":"Bake for about 45 minutes, or until top is golden brown"
+	}
+}
+		</pre></code>
+
+
+		<p>Your card data gets stored in a simple JSON file, and can be shared over the web by sharing a link. Unlike other formats like vCard, your Digidex card is linked to a URL on the web. That means that when you update your Digidex card, people with your card will see the changes without taking any action. In addition, the decentralized nature of Digidex means that no single entity owns your data. You can host your Digidex card on your own server if you like!</p>
+
+		<h1>Creating your own Digidex card manually.</h1>
+
+		<p>You can make a Digidex card for anyone or anything. Some apps will create one for you, but if you're more tech-savvy, you can probably create one yourself.</p>
+
+
+
+
+
+	</article>
+	</div>
+
+	<footer>
+		<p>Footer content goes here</p>
+	</footer>
+</html>
+

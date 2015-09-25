@@ -1,0 +1,69 @@
+/*
+
+Color scheme from Adobe Kuler
+https://color.adobe.com/Salmon-on-Ice-color-theme-2291686
+Created by idealic
+
+Dark Blue/Gray 	- HSB(210,  18,  30) #3E454C
+Medium Blue		- HSB(203,  83,  77) #2185C5
+Light Blue		- HSB(202,  50,  99) #7ECEFD
+White 			- HSB( 39,  10, 100) #FFF6E5
+Salmon			- HSB( 10,  60, 100) #FF7F66
+*/
+
+html, body {
+	background-color: #3E454C;
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+header, article, footer {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1000px;
+}
+
+header {
+	font-weight: bold;
+	margin: 80px auto 80px;
+}
+
+header h1 {
+	font-size: 5em;
+	margin: 0;
+
+	color: #7ECEFD;
+}
+
+header h2 {
+	font-size: 2em;
+	margin: 0;
+
+	color: #2185C5;
+}
+
+div.main-content {
+	background-color: #FFF6E5;
+	padding: 2em 0;
+}
+
+article {
+
+	font-size: 1.2em;
+	line-height: 1.5em;
+}
+
+article a {
+	color: #FF7F66;
+
+	text-decoration: none;
+}
+
+article a:hover {
+	text-decoration: underline;
+}
+
+footer {
+	color: #7ECEFD;
+}
