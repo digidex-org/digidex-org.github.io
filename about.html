@@ -1,0 +1,217 @@
+<!doctype html>
+<html>
+<head>
+	<title>Digidex.org | about</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="digidex" content="digidex://digidex.org/digidex.json">
+
+	<style type="text/css">
+
+html, body {
+	margin: 0;
+	font-family: -apple-system, sans-serif;
+	background-color: #FFF6E5;
+}
+
+img.digidex-card {
+	display: block;
+	max-width: 97%;
+	max-height: 300px;
+	margin: 8px auto 20px;
+
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+
+h1.card-name {
+	margin-left: 12px;
+	font-size: 14pt;
+}
+
+/*
+When the view is in mobile mode, don't display the digidex
+link in the left pane. This will be overriden if the screen
+is desktop-size.
+ */
+div.left-pane a.open-in-digidex {
+	display: none;
+}
+
+a.open-in-digidex {
+	display: block;
+	text-decoration: none;
+
+	background-color: rgba(255, 255, 255, 0.8);
+
+	font-size: 10pt;
+	text-align: center;
+	width: 100%;
+
+	padding-top: 15px;
+	padding-bottom: 15px;
+
+	border-top: solid 1px;
+	border-bottom: solid 1px;
+
+	color: #2185C5;
+	border-color: #2185C5;
+}
+
+div.key-pair {
+	margin: 20px 0px;
+}
+
+div.key-pair div.key {
+	text-transform: uppercase;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #2185C5;
+
+	padding-left: 12px;
+	margin-bottom: 4px;
+}
+
+div.key-pair div.value {
+	font-size: 11pt;
+	color: #222;
+	padding: 2px 12px 10px;
+}
+
+div.key-pair table {
+	border-top: solid 1px #BBB;
+	border-bottom: solid 1px #BBB;
+
+	background-color: #FFF;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+div.key-pair table tr td {
+	padding: 10px 12px;
+	font-size: 10pt;
+
+	border-bottom: solid 1px #DDD;
+}
+
+div.key-pair table tr td.blank {
+	width: 30px;
+	padding: 0px;
+}
+
+div.key-pair table tr td.blank,
+div.key-pair table tr:last-child td {
+	border-bottom: none;
+}
+
+div.key-pair table tr td.key {
+	text-align: right;
+	font-size: 9pt;
+	color: #5E5EFF;
+	max-width: 30px;
+}
+
+@media screen and (min-width: 800px) {
+
+	div.container {
+		position: relative;
+		width: 780px;
+		margin: auto;
+	}
+
+	img.digidex-card {
+		max-width: 100%;
+		max-height: auto;
+		margin: 0 auto 15px;
+	}
+
+	div.left-pane,
+	div.right-pane {
+		width: 390px;
+	}
+
+	div.left-pane {
+		float: left;
+	}
+
+	div.right-pane {
+
+		margin-top: 20px;
+		margin-left: 400px;
+		
+		padding-top: 1px;
+		padding-bottom: 1px;
+	}
+
+	div.right-pane > * {
+		margin-left: 12px;
+		margin-right: 12px;
+	}
+
+	div.left-pane a.open-in-digidex {
+		display: block;
+	}
+
+	div.right-pane a.open-in-digidex {
+		display: none;
+	}
+
+	a.open-in-digidex {
+
+		padding-top: 15px;
+		padding-bottom: 15px;
+
+		border: solid 1px;
+		border-radius: 3px;
+	}
+
+	div.key-pair div.value {
+		font-size: 13pt;
+		color: #222;
+
+		background-color: transparent;
+		border-bottom: none;
+	}
+
+
+	div.key-pair table {
+		border-bottom: none;
+	}
+
+
+	div.key-pair table tr td.blank {
+		display: none;
+	}
+
+}
+
+
+
+	</style>
+
+
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="left-pane">
+			<div><img class="digidex-card" src="digidex-card-graphic.png"></div>
+			<a class="open-in-digidex" href="digidex://digidex.org/digidex.json">OPEN IN DIGIDEX APP...</a>
+		</div>
+		<div class="right-pane">
+			<a class="open-in-digidex" href="digidex://digidex.org/digidex.json">OPEN IN DIGIDEX APP...</a>
+
+			<div class="key-pair">
+				<div class="key">website</div>
+				<div class="value">https://digidex.org</div>
+			</div>
+
+			<div class="key-pair">
+				<div class="key">github</div>
+				<div class="value">https://github.com/digidex-org</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
