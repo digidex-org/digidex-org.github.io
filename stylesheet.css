@@ -27,7 +27,7 @@ header, article, footer {
 
 header {
 	font-weight: bold;
-	margin: 40px auto 40px;
+	margin: 40px auto 10px;
 }
 
 header h1 {
@@ -37,12 +37,44 @@ header h1 {
 	color: #7ECEFD;
 }
 
+header h1 a {
+	text-decoration: none;
+	color: #7ECEFD;
+}
+
 header h2 {
 	font-size: 1.1em;
 	margin: 0;
+	margin-bottom: 20px;
 
 	color: #2185C5;
 }
+
+header nav ul {
+	padding: 0;
+	margin: 0;
+}
+
+header nav li {
+	list-style: none;
+	display: inline-block;
+	margin-right: 12px;
+	font-size: 12pt;
+	padding: 8px 16px;
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+header nav a {
+	color: #7ECEFD;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+header nav a:hover li {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+
 
 div.main-content {
 	background-color: #FFF6E5;
@@ -75,13 +107,24 @@ footer {
 }
 
 @media only screen and (min-width: 600px) {
+
+	header {
+		margin: 100px auto 20px;
+	}
+
 	header h1 {
 		font-size: 5em;
 	}
 
 	header h2 {
 		font-size: 2.6em;
+		margin-bottom: 60px;
 	}
+
+	header nav li {
+		font-size: 15pt;
+	}
+
 
 	article {
 		font-size: 1.2em;
