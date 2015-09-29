@@ -133,4 +133,8 @@ footer {
 	article {
 		font-size: 1.2em;
 	}
+
+	code pre {
+		font-size: 1em;
+	}
 }
