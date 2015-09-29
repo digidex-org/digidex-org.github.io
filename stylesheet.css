@@ -57,10 +57,8 @@ header nav ul {
 
 header nav li {
 	list-style: none;
-	display: inline-block;
-	margin-right: 12px;
-	font-size: 12pt;
 	padding: 8px 16px;
+	font-size: 12pt;
 	background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -68,6 +66,8 @@ header nav a {
 	color: #7ECEFD;
 	text-transform: uppercase;
 	text-decoration: none;
+	display: inline-block;
+	margin-right: 12px;
 }
 
 header nav a:hover li {
