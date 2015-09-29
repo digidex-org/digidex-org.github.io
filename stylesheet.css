@@ -74,6 +74,9 @@ header nav a:hover li {
 	background-color: rgba(255, 255, 255, 0.2);
 }
 
+header nav a:active li {
+	background-color: rgba(255, 255, 255, 0.3);
+}
 
 
 div.main-content {
@@ -90,6 +93,7 @@ code pre {
 	line-height: 1em;
 	font-size: 0.8em;
 	tab-size: 2;
+	white-space: pre-wrap;
 }
 
 article a {
