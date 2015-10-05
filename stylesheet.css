@@ -89,11 +89,16 @@ article {
 	line-height: 1.5em;
 }
 
-code pre {
-	line-height: 1em;
-	font-size: 0.8em;
+pre > code {
+	line-height: 1.2em;
 	tab-size: 2;
-	white-space: pre-wrap;
+
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.6);
+    display: block;
+    border-radius: 2px;
+    border: solid 1px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
 }
 
 article a {
@@ -104,6 +109,11 @@ article a {
 
 article a:hover {
 	text-decoration: underline;
+}
+
+article > img,
+article > a > img {
+	width: 100%;
 }
 
 footer {

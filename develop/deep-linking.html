@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+	<title>Digidex.org | Develop</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+	<meta name="digidex" content="digidex:http://digidex.org/digidex.json">
+</head>
+
+<body>
+	<header>
+		<h1><a href="/">DIGIDEX</a></h1>
+		<h2>Decentralized Digital Business Cards</h2>
+
+		<nav>
+			<ul>
+				<a href="/about.html"><li>About</li></a>
+				<a href="/philosophy.html"><li>Philosophy</li></a>
+				<a href="/develop/"><li>Develop</li></a>
+			</ul>
+		</nav>
+	</header>
+
+	<nav></nav>
+
+	<div class="main-content">
+	<article>
+
+		<h1>Linking Digidex Cards</h1>
+
+		<p>Digidex degrades gracefully. That means when you send a someone a link to a digidex card, they can view it even if they don't have a digidex app. However, if they <em>do</em> have a digidex app, they should be able to open the card in that app in as few steps as possible.</p>
+
+
+
+		<h2>Digidex URL scheme</h2>
+
+		<p>Digidex uses a custom URL scheme to identify links directly.</p>
+
+		<pre><code>digidex:http://digidex.org/digidex.json</code></pre>
+
+		<p>Immediately following the <code>digidex</code> URL scheme, you should include your entire web URL (including the <code>http</code> or <code>https</code>) that links directly to the digidex json data.</p>
+
+		<p>Using this URL scheme will allow users to open a web-hosted digidex card directly in their client of choice.</p>
+
+
+
+
+		<h2>Deep Linking Digidex Cards</h2>
+
+		<p>Deep linking your digidex card in a web page provides several benefits. It allows a browser (or browser extension) to discover more information about your page. The digidex card could be used to create rich bookmark data, or could be pulled into an app and saved by the user. When a QR code is scanned by a digidex app, it will detect the deep link, and load the digidex card directly rather than present the web page.</p>
+
+		<p>To deep link your digidex card in a webpage, simply add a <code>meta</code> tag to the <code>head</code> of your HTML.</p>
+
+		<pre><code>&lt;meta name="digidex" content="digidex://digidex.org/digidex.json"&gt;</code></pre>
+
+		<p>If you make an app that allows users to create and publish their own digidex cards, be sure to include a feature that generates a webpage with the card's content. The web page that you create should include a deep link to the digidex card's card data.</p>
+
+		<a href="img/DigidexFlowchart.png"><img src="img/DigidexFlowchart.png"></a>
+
+
+	</article>
+	</div>
+</body>
+</html>
