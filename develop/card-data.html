@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+	<title>Digidex.org | Develop</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+	<meta name="digidex" content="digidex:http://digidex.org/digidex.json">
+</head>
+
+<body>
+	<header>
+		<h1><a href="/">DIGIDEX</a></h1>
+		<h2>Decentralized Digital Business Cards</h2>
+
+		<nav>
+			<ul>
+				<a href="/philosophy.html"><li>Philosophy</li></a>
+				<a href="/develop/"><li>Develop</li></a>
+				<a href="/about.html"><li>Example</li></a>
+			</ul>
+		</nav>
+	</header>
+
+	<nav></nav>
+
+	<div class="main-content">
+	<article>
+
+		<h1>Anantomy of a Digidex Card</h1>
+
+		<p>A digidex card is simply a JSON object that describes a person, business, product, event, or something else. It is not limited by pre-defined fields, although there are some conventions that you should follow to ensure compatibility across apps.</p>
+
+		<h2>Conventions</h2>
+		<ul>
+			<li>Your digidex cards should have a "name" attribute. This is commonly understood to be the title of your card.</li>
+			<li>Your digidex card should have a "_cardURL" attribute which links to the image of the card graphic.</li>
+			<li>Any attributes that start with an underscore are intended for internal use by a digidex client (such as a mobile app), and are not automatically visisble (however, some clients may choose to implement a "show all" option that will display these hidden fields).</li>
+			<li>Any attributes that do not start with an underscore are considered "visible", and will be displayed to the user by default.</li>
+			<li>Attributes may contain a nested collection (such as an array or object), but nesting more than one level deep may result in unexpected behavior and should be avoided.</li>
+		</ul>
+
+		<h3>Name</h3>
+
+		<p>The name attribute should naturally be the name of the person, business, product, event, etc that you're describing. You should consider your audience when you select this attribute. For instance, a dentist might choose "Dr. Smith DDS" for their digidex card name instead of their actual first and last name.</p>
+
+		<h3>_cardURL</h3>
+
+		<p>This is the full web url where the card image can be retrieved.</p>
+
+		<h3>_shareURL</h3>
+
+		<p>This is the URL that will be used to share your digidex card. This URL should be a page containing a deep-link
+
+		<h2>Examples</h2>
+
+		<p>Below is a simple example that you might use for yourself.</p>
+<pre><code>{
+	"_cardURL":"http://example.net/digidex.png",
+	"name":"John Appleseed",
+	"company":"123 Businesses",
+	"occupation":"Software Engineer",
+	"phone":{
+		"office":"(555)555-5555",
+		"cell":"(555)555-5555"
+	},
+	"address":{
+		"home":"123 Example Avenue\nExample EX, 00000"
+	},
+	"website":"http://example.net",
+	"twitter":"@example",
+	"facebook":"http://facebook.com/example"
+}</code></pre>
+
+
+<p>This is a digidex card you might see for a business.</p>
+<pre><code>{
+	"_cardURL":"http://example.net/digidex.png",
+	"name":"123 Businesses",
+	"phone":{
+		"customer service":"(555)555-5555",
+		"billing":"(555)555-5556",
+		"sales":"(555)555-5557",
+		"switchboard":"(555)555-5550"
+	},
+	"address":{
+		"headquarters":"123 Example Avenue\nExample EX, 00000"
+	},
+	"email":{
+		"customer service":"support@123businesses.com"
+	},
+	"website":"http://www.123businesses.com"
+}</code></pre>
+
+
+<p>This is a digidex card you might see for a podcast personality</p>
+<pre><code>{
+	"_cardURL":"http://podcastcentral.com/digidex1.png".
+	"name":"Mr. Podcaster",
+	"podcasts":{
+		"Technoology Talk Show":"pcast://podcastcentral.com/tts.xml",
+		"Business News Podcast":"pcast://podcastcentral.com/bnp.xml",
+		"Politics Now":"pcast://podcastcentral.com/pn.xml"
+	},
+	"twitter":"@mrpodcaster"
+}</code></pre>
+
+		<p>Recipes work well too</p>
+<pre><code>{
+	"name":"Corny Cornbread Corn Casserole",
+	"ingredients":{
+		"corn":"1 can",
+		"cream style corn":"1 can",
+		"Jiffy Corn Bread mix":"1 box",
+		"sour cream":"1 cup",
+		"chopped onions":"1 cup",
+		"eggs":"2"
+	},
+	"directions":{
+		"1":"Preheat oven to 300 degrees farenheit",
+		"2":"Mix all ingredients into a bowl",
+		"3":"Pour mixture into a greased 2 qt caserole dish",
+		"4":"Bake for about 45 minutes, or until top is golden brown"
+	}
+}</code></pre>
+
+
+
+	</article>
+	</div>
+</body>
+</html>
+
+
