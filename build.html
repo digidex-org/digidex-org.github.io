@@ -1,0 +1,108 @@
+<html>
+<head>
+	<title>Digidex.org</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<meta name="digidex" content="digidex:http://digidex.org/digidex.json">
+</head>
+
+<body>
+	<header>
+		<h1><a href="/">DIGIDEX</a></h1>
+		<h2>Decentralized Digital Business Cards</h2>
+
+		<nav>
+			<ul>
+				<a href="/philosophy.html"><li>Philosophy</li></a>
+				<a href="/develop/"><li>Develop</li></a>
+				<a href="/about.html"><li>Example</li></a>
+			</ul>
+		</nav>
+	</header>
+
+	<nav></nav>
+
+	<div class="main-content">
+	<article>
+
+		<h1>Summary</h1>
+		
+		<p>Digidex is a simple format to use. If you have your own website, you can follow this guide to create your own digidex card from scratch. If you <strong>do not</strong> have your own website, it's recommended that you use a digidex app (such as <a href="http://rectangoapp.com/">Rectango</a> for iOS) to create your own card.</p>
+
+
+		<h1>Example</h1>
+		
+		<p>To see a complete example of a digidex card, see the <a href="/about.html">about page</a>.</p>
+
+
+		<h1>Image</h1>
+		
+		<p>The first step to creating your custom digidex card is to create an image that will be the graphical representation of your card. It's recommended that your image be oriented in landscape orientaion, but any sized image will do. Below is the card graphic we use for digidex.org:</p>
+		
+		<div><img src="http://digidex.org/digidex-card-graphic.png"><label><pre><code>http://digidex.org/digidex-card-graphic.png</code></pre></label></div>
+		
+		<p>Once your image is complete, upload it to your server. Make a note of the URL that the image is available at, you will need it later.</p>
+
+
+		<h1>JSON</h1>
+
+		<p>The next step is to create the JSON file that contains all of your card's metadata. Things like your name, email address, and website are good here. Remember, once this card is uploaded to the web, it can be acessed by anyone, so don't include any information you wouldn't normally display somewhere on your website.</p>
+		
+		<p>Any keys that start with an underscore character (including <code>_cardURL</code>) are considered by convention to be hidden fields, and should not normally be displayed as text in a digidex-compatible app. These fields usually offer some additional functionality to the digidex card. For instance, the <code>_cardURL</code> field should contain a link to your digidex card graphic on the web, so an app can download the original image.</p>
+		
+		<p>Below is an example JSON file which you can use as a starting point.</p>
+		<pre><code>{
+	"name":"digidex.org",
+	"website":"http://digidex.org",
+	"github":"https://github.com/digidex-org",
+
+	"phone":"(555) 555-1212",
+	"email":"example@digidex.org",
+
+	"_cardURL":"http://digidex.org/digidex-card-graphic.png",
+	"_shareURL":"http://digidex.org/about.html",
+
+	"_order":[
+		"name",
+		"website",
+		"phone",
+		"email"
+	]
+}</code></pre>
+
+		<p>Below is a summary of some special fields that you may find useful. These are merely conventions, and may not behave exactly the same way in all digidex clients</p>
+		<ul>
+			<li><strong>name</strong>: This field is used to identify the name of the card. If this digidex card is for a person, it should be the person's name. If this card is for a business's name, etc.</li>
+			<li><strong>_cardURL</strong>: This field should contain a link to your card's graphic. (strongly recommended)</li>
+			<li><strong>_shareURL</strong>: This field tells the digidex client what URL to send when the user chooses to share your card. This sould typically be a link to your homepage. If this field is omitted, the user's app may choose to use a direct link to your JSON file instead.</li>
+			<li><strong>_order</strong>: This field tells the digidex client specifically what order to display your fields in. If this field is omitted, the order that the fields appear is undefined.</li>
+		</ul>
+
+		<p>Once your digidex JSON file is complete, you can upload it to your website.</p>
+
+
+		<h1>All Done</h1>
+
+		<p>If you like, you can stop here. You're all done! Your digidex card is ready to use.</p>
+
+		<p>To indicate that a URL is a digidex record, you should use the <code>digidex:</code> URL scheme, followed by the complete URL to the JSON document (including <code>http</code> or <code>https</code>). For example, the digidex URL for digidex.org is: <a href="digidex:http://digidex.org/digidex.json">digidex:http://digidex.org/digidex.json</a>. When using this URL scheme, a user with a digidex-compatible app installed can open your card directly within the app.</p>
+
+		<p>For backwards compatibility, it's recommended that you create a webpage that contains all of the information within your digidex card, with a link to "open in digidex app". For an example of how this might look, check out digidex.org's <a href="http://digidex.org/about.html">about page</a>.</p>
+
+
+
+		<h1>Above and Beyond: Embedding your digidex card in a website.</h1>
+
+		<p>Once your digidex card is complete, it's recommended that you update your website to include a deep link to the card. This makes it possible to share a QR code or URL that can be opened in either a digidex-compatible app, or directly in a web browser. Enabling this functionality is simple. Simply add this tag to your HTML's <code><head></code> element:</p>
+		<pre><code>&lt;meta name="digidex" content="digidex:http://digidex.org/digidex.json"&gt;</code></pre>
+
+		<p>Simply replace the <code>content</code> attribute with the digidex URL, and you're all set. To try it out, enter your URL in a digidex app and see your digidex card come up.</p>
+
+	</article>
+	</div>
+
+	<footer>
+		
+	</footer>
+</body>
+</html>
